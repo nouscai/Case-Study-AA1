@@ -1,10 +1,10 @@
-#Case-Study-AA1
+#Case-Study-AA1#
 
-##Predicting whether e-commerce customers use coupons
+##Predicting whether e-commerce customers use coupons##
 
 In this project, I will be exploring the impact of coupons on consumer purchasing behavior using a dataset provided by Kaggle.https://www.kaggle.com/datasets/rishikumarrajvansh/marketing-insights-for-e-commerce-company/data?select=Online_Sales.csv. This dataset includes marketing insights for an e-commerce company, particularly focusing on online sales data. The reason for choosing this dataset is that numerous studies have proven that coupons effectively promote purchases. Therefore, I will conduct preliminary exploratory analyses, with a focus on how coupons influence consumer buying behavior. My analysis will be based on the data structure provided in the dataset, using various statistical methods and data visualization techniques to reveal the relationship between coupons and sales. These analyses will help us better understand the impact of coupons on e-commerce sales and may provide valuable insights for formulating e-commerce marketing strategies.
 
-##Tool
+##Tool##
 Talend Data Integration
 Merging different datasets and making the structure cleaner and clearer.
 
