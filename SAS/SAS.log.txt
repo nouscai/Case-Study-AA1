@@ -1,0 +1,1106 @@
+1                                           The SAS System               19:06 Monday, January 8, 2024
+
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M7) 
+      Licensed to KYUNGGI UNIV-MIDTIER1 0401, Site 10502987.
+NOTE: This session is executing on the X64_10PRO  platform.
+
+
+
+NOTE: Analytical products:
+      
+      SAS/STAT 15.2
+      SAS/ETS 15.2
+      SAS/OR 15.2
+      SAS/IML 15.2
+      SAS/QC 15.2
+
+NOTE: Additional host information:
+
+ X64_10PRO WIN 10.0.19041  Workstation
+
+NOTE: SAS Initialization used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+1          filename _emenv catalog 'sashelp.emwip.em_loadmacros.source';
+2          %inc _emenv;
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+NOTE: Fileref _FDSEP has been deassigned.
+NOTE: Fileref _TEMP has been deassigned.
+1088       filename _emenv;
+NOTE: Fileref _EMENV has been deassigned.
+1089       %let WIP_PROJPATH=%nrstr(C:\Users\666\Desktop);
+1090       %let WIP_PROJNAME=%nrstr(casecaijue);
+1091       proc display c=sashelp.emwip.em_init.scl; run;
+
+7644       %let SYSCC=0;
+7645       options VBUFSIZE= 64M;
+NOTE: PROCEDURE DISPLAY used (Total process time):
+      real time           0.15 seconds
+      cpu time            0.12 seconds
+      
+
+2 The SAS System                                                                                                                                                                                                                   19:06 Monday, January 8, 202
+4
+
+7649       %let SYSCC=0;
+7650       %let SYSRC=0;
+7651       %let EMEXCEPTIONSTRING=;
+7652       %let SYSMSG=;
+7653       %em_diagram(action=open, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, userId=%nrbquote(666), sessionid=6661704711959061, outfile=DiagramOpenResponse.xml);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION:
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 refers to the same physical library as COUPON.
+NOTE: Libref EMWS1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1
+7665       %let _EM_TREECONVERSION=0;
+7666       data _null_;
+7667       set EMWS1.EM_NODEID end=eof;
+7668       where upcase(Component) ='DECISIONTREE' and CLASS = 'SASHELP.EMMODL.DECISIONTREE.CLASS';
+7669       if eof then call symput('_EM_TREECONVERSION', '1');
+7670       run;
+
+NOTE: There were 0 observations read from the data set EMWS1.EM_NODEID.
+      WHERE (UPCASE(Component)='DECISIONTREE') and (CLASS='SASHELP.EMMODL.DECISIONTREE.CLASS');
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+treeconversion=0 
+7671       %let syscc=0;
+7672       filename _wipchk catalog "EMWS1.Boost.test.source";
+7673       data _null_;
+7674       file _wipchk;
+7675       put '/* Test */';
+7676       run;
+
+NOTE: The file _WIPCHK is:
+      Catalog Name=EMWS1.BOOST.TEST.SOURCE,
+      Catalog Page Size=4096,
+      Number of Catalog Pages=16,
+      Created=Monday,  8 January 2024 16:22:38,
+      Last Modified=Monday,  8 January 2024 18:42:06,
+      Filename=C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\boost.sas7bcat,
+      Release Created=9.0401M7,
+      Host Created=X64_10PRO,
+      Owner Name=DESKTOP-PPAOORK\666,
+      File Size=            65KB,
+      File Size (bytes)=66560
+
+NOTE: 1 record was written to the file _WIPCHK.
+      The minimum record length was 10.
+      The maximum record length was 10.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+7677       data _null_;
+7678       rc = fdelete('_wipchk');
+7679       run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+7680       filename _wipchk;
+NOTE: Fileref _WIPCHK has been deassigned.
+7681       filename _wipxml 'C:\Users\666\AppData\Local\Temp\SAS Temporary Files\_TD3672_DESKTOP-PPAOORK_\Prc2\DiagramOpenResponse.xml' encoding="UTF-8" NOBOM;
+3 The SAS System                                                                                                                                                                                                                   19:06 Monday, January 8, 202
+4
+
+WARNING: End of file.
+WARNING: End of file.
+7682       %let SYSCC=0;
+7683       %let SYSRC=0;
+7684       %let EMEXCEPTIONSTRING=;
+7685       %let SYSMSG=;
+7686       %em_diagram(action=SETORIENTATION, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, sessionid=6661704711959061, orientation=HORIZONTAL);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: OPEN
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+4 The SAS System                                                                                                                                                                                                                   19:06 Monday, January 8, 202
+4
+
+WARNING: End of file.
+WARNING: End of file.
+7698       %let SYSCC=0;
+7699       %let SYSRC=0;
+7700       %let EMEXCEPTIONSTRING=;
+7701       %let SYSMSG=;
+7702       %em_diagram(action=setproperties, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, requestFile=DiagramSetPropertiesRequest.xml);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: SETORIENTATION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+7714       %global EM_REFRESH_PROPERTY;
+7715       %let EM_REFRESH_PROPERTY=N;
+7716       %let syscc=0;
+7717       data WORK._EMVISUALPROPERTIES;
+7718       length NODEID CLASS COMPONENT $32 X Y 8 LABEL $81;
+7719       NODEID = "Boost";
+7720       CLASS='';
+7721       component='';
+7722       X = 1067;
+7723       Y= 451;
+7724       LABEL = "Gradient Boosting";
+7725       output;
+7726       NODEID = "Boost2";
+7727       CLASS='';
+7728       component='';
+7729       X = 908;
+7730       Y= 1079;
+7731       LABEL = "Gradient Boosting";
+7732       output;
+7733       NODEID = "EMSave";
+7734       CLASS='';
+7735       component='';
+7736       X = 335;
+7737       Y= 20;
+7738       LABEL = "Save Data";
+7739       output;
+7740       NODEID = "EMSave2";
+7741       CLASS='';
+7742       component='';
+7743       X = 320;
+7744       Y= 118;
+7745       LABEL = "Save Data (2)";
+7746       output;
+7747       NODEID = "EMSave3";
+7748       CLASS='';
+7749       component='';
+7750       X = 295;
+7751       Y= 326;
+7752       LABEL = "Save Data (3)";
+7753       output;
+7754       NODEID = "EMSave4";
+7755       CLASS='';
+7756       component='';
+7757       X = 376;
+7758       Y= 843;
+7759       LABEL = "Save Data (4)";
+7760       output;
+7761       NODEID = "FIMPORT";
+7762       CLASS='';
+7763       component='';
+7764       X = 100;
+7765       Y= 20;
+7766       LABEL = "File Import";
+7767       output;
+7768       NODEID = "FIMPORT2";
+7769       CLASS='';
+7770       component='';
+7771       X = 119;
+7772       Y= 119;
+7773       LABEL = "File Import (new)";
+7774       output;
+7775       NODEID = "FIMPORT3";
+7776       CLASS='';
+7777       component='';
+7778       X = 94;
+7779       Y= 327;
+7780       LABEL = "File Import (3)";
+7781       output;
+7782       NODEID = "FIMPORT4";
+7783       CLASS='';
+7784       component='';
+7785       X = 67;
+7786       Y= 845;
+7787       LABEL = "File Import (4)";
+7788       output;
+7789       NODEID = "HPDMForest";
+7790       CLASS='';
+7791       component='';
+7792       X = 1067;
+7793       Y= 361;
+7794       LABEL = "HP Forest";
+7795       output;
+7796       NODEID = "HPDMForest2";
+7797       CLASS='';
+7798       component='';
+7799       X = 900;
+7800       Y= 1015;
+7801       LABEL = "HP Forest";
+7802       output;
+7803       NODEID = "Ids";
+7804       CLASS='';
+7805       component='';
+7806       X = 486;
+7807       Y= 30;
+7808       LABEL = "Coupon_decision";
+7809       output;
+7810       NODEID = "Ids2";
+7811       CLASS='';
+7812       component='';
+7813       X = 484;
+7814       Y= 118;
+7815       LABEL = "new_coupon";
+7816       output;
+7817       NODEID = "Ids3";
+7818       CLASS='';
+7819       component='';
+7820       X = 477;
+7821       Y= 337;
+7822       LABEL = "new2_coupon";
+7823       output;
+7824       NODEID = "Ids4";
+7825       CLASS='';
+7826       component='';
+7827       X = 526;
+7828       Y= 843;
+7829       LABEL = "balance";
+7830       output;
+7831       NODEID = "MdlComp";
+7832       CLASS='';
+7833       component='';
+7834       X = 1024;
+7835       Y= 165;
+7836       LABEL = "Model Comparison";
+7837       output;
+7838       NODEID = "MdlComp2";
+7839       CLASS='';
+7840       component='';
+7841       X = 1024;
+7842       Y= 222;
+7843       LABEL = "Model Comparison (2)";
+7844       output;
+7845       NODEID = "MdlComp3";
+7846       CLASS='';
+7847       component='';
+7848       X = 1277;
+7849       Y= 458;
+7850       LABEL = "Model Comparison (3)";
+7851       output;
+7852       NODEID = "MdlComp4";
+7853       CLASS='';
+7854       component='';
+7855       X = 1168;
+7856       Y= 882;
+7857       LABEL = "Model Comparison (4)";
+7858       output;
+7859       NODEID = "MdlComp5";
+7860       CLASS='';
+7861       component='';
+7862       X = 1317;
+7863       Y= 655;
+7864       LABEL = "Model Comparison (5)";
+7865       output;
+7866       NODEID = "Neural";
+7867       CLASS='';
+7868       component='';
+7869       X = 330;
+7870       Y= 539;
+7871       LABEL = "Neural Network";
+7872       output;
+7873       NODEID = "Part";
+7874       CLASS='';
+7875       component='';
+7876       X = 672;
+7877       Y= 53;
+7878       LABEL = "70/30(1)";
+7879       output;
+7880       NODEID = "Part2";
+7881       CLASS='';
+7882       component='';
+7883       X = 681;
+7884       Y= 172;
+7885       LABEL = "70/30(2)";
+7886       output;
+7887       NODEID = "Part3";
+7888       CLASS='';
+7889       component='';
+7890       X = 679;
+7891       Y= 303;
+7892       LABEL = "70/30(4)";
+7893       output;
+7894       NODEID = "Part4";
+7895       CLASS='';
+7896       component='';
+7897       X = 890;
+7898       Y= 668;
+7899       LABEL = "80/20";
+7900       output;
+7901       NODEID = "Part5";
+7902       CLASS='';
+7903       component='';
+7904       X = 679;
+7905       Y= 901;
+7906       LABEL = "70/30(4)";
+7907       output;
+7908       NODEID = "Stat";
+7909       CLASS='';
+7910       component='';
+7911       X = 670;
+7912       Y= 4;
+7913       LABEL = "StatExplore";
+7914       output;
+7915       NODEID = "Stat2";
+7916       CLASS='';
+7917       component='';
+7918       X = 686;
+7919       Y= 228;
+7920       LABEL = "StatExplore (2)";
+7921       output;
+7922       NODEID = "Stat3";
+7923       CLASS='';
+7924       component='';
+7925       X = 681;
+7926       Y= 116;
+7927       LABEL = "StatExplore (new)";
+7928       output;
+7929       NODEID = "Stat4";
+7930       CLASS='';
+7931       component='';
+7932       X = 689;
+7933       Y= 817;
+7934       LABEL = "StatExplore (4)";
+7935       output;
+7936       NODEID = "Tree";
+7937       CLASS='';
+7938       component='';
+7939       X = 845;
+7940       Y= 55;
+7941       LABEL = "Decision Tree";
+7942       output;
+7943       NODEID = "Tree10";
+7944       CLASS='';
+7945       component='';
+7946       X = 887;
+7947       Y= 425;
+7948       LABEL = "Decision Tree (max8)";
+7949       output;
+7950       NODEID = "Tree11";
+7951       CLASS='';
+7952       component='';
+7953       X = 890;
+7954       Y= 548;
+7955       LABEL = "Decision Tree (leaf8)";
+7956       output;
+7957       NODEID = "Tree12";
+7958       CLASS='';
+7959       component='';
+7960       X = 897;
+7961       Y= 886;
+7962       LABEL = "Decision Tree (4)";
+7963       output;
+7964       NODEID = "Tree13";
+7965       CLASS='';
+7966       component='';
+7967       X = 895;
+7968       Y= 948;
+7969       LABEL = "Decision Tree (4)";
+7970       output;
+7971       NODEID = "Tree14";
+7972       CLASS='';
+7973       component='';
+7974       X = 905;
+7975       Y= 816;
+7976       LABEL = "Decision Tree (14)";
+7977       output;
+7978       NODEID = "Tree2";
+7979       CLASS='';
+7980       component='';
+7981       X = 834;
+7982       Y= 168;
+7983       LABEL = "Decision Tree (2)";
+7984       output;
+7985       NODEID = "Tree3";
+7986       CLASS='';
+7987       component='';
+7988       X = 883;
+7989       Y= 243;
+7990       LABEL = "Decision Tree (3)";
+7991       output;
+7992       NODEID = "Tree4";
+7993       CLASS='';
+7994       component='';
+7995       X = 1090;
+7996       Y= 627;
+7997       LABEL = "Decision Tree (4)";
+7998       output;
+7999       NODEID = "Tree5";
+8000       CLASS='';
+8001       component='';
+8002       X = 1092;
+8003       Y= 702;
+8004       LABEL = "Decision Tree (Gini)5";
+8005       output;
+8006       NODEID = "Tree6";
+8007       CLASS='';
+8008       component='';
+8009       X = 881;
+8010       Y= 309;
+8011       LABEL = "Decision Tree (6)";
+8012       output;
+8013       NODEID = "Tree7";
+8014       CLASS='';
+8015       component='';
+8016       X = 885;
+8017       Y= 369;
+8018       LABEL = "Decision Tree (7)";
+8019       output;
+8020       NODEID = "Tree8";
+8021       CLASS='';
+8022       component='';
+8023       X = 888;
+8024       Y= 608;
+8025       LABEL = "Decision Tree (0.3)";
+8026       output;
+8027       NODEID = "Tree9";
+8028       CLASS='';
+8029       component='';
+8030       X = 888;
+8031       Y= 484;
+8032       LABEL = "Decision Tree (max10)";
+8033       output;
+8034       run;
+
+NOTE: The data set WORK._EMVISUALPROPERTIES has 45 observations and 6 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+8035       proc sort data=WORK._EMVISUALPROPERTIES;
+8036       by NODEID;
+8037       run;
+
+NOTE: There were 45 observations read from the data set WORK._EMVISUALPROPERTIES.
+NOTE: The data set WORK._EMVISUALPROPERTIES has 45 observations and 6 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+8038       proc sort data=EMWS1.em_nodeid out=_tempNodeid;
+8039       by NODEID;
+8040       run;
+
+NOTE: There were 45 observations read from the data set EMWS1.EM_NODEID.
+NOTE: The data set WORK._TEMPNODEID has 45 observations and 8 variables.
+NOTE: PROCEDURE SORT used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8041       data _tempNodeid;
+8042       update _tempNodeid(in=_a) WORK._EMVISUALPROPERTIES(in=_b);
+8043       by NODEID;
+8044       if _a then output;
+8045       run;
+
+NOTE: There were 45 observations read from the data set WORK._TEMPNODEID.
+NOTE: There were 45 observations read from the data set WORK._EMVISUALPROPERTIES.
+NOTE: The data set WORK._TEMPNODEID has 45 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8046       data EMWS1.em_nodeid;
+8047       set _tempNodeid;
+8048       run;
+
+NOTE: There were 45 observations read from the data set WORK._TEMPNODEID.
+NOTE: The data set EMWS1.EM_NODEID has 45 observations and 8 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+8049       proc datasets lib=WORK nolist;
+8050       delete _tempNodeid _EMVISUALPROPERTIES;
+8051       run;
+
+NOTE: Deleting WORK._TEMPNODEID (memtype=DATA).
+NOTE: Deleting WORK._EMVISUALPROPERTIES (memtype=DATA).
+8052       quit;
+
+NOTE: PROCEDURE DATASETS used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+5 The SAS System                                                                                                                                                                                                                   19:06 Monday, January 8, 202
+4
+
+WARNING: Physical file does not exist, C:\Users\666\AppData\Local\Temp\SAS Temporary Files\_TD3672_DESKTOP-PPAOORK_\Prc2\DiagramOpenSessionResponse.xml.
+8053       %let SYSCC=0;
+8054       %let SYSRC=0;
+8055       %let EMEXCEPTIONSTRING=;
+8056       %let SYSMSG=;
+8057       %em_diagram(action=closesession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: SETPROPERTIES
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 has been deassigned.
+6 The SAS System                                                                                                                                                                                                                   19:06 Monday, January 8, 202
+4
+
+8069       %let SYSCC=0;
+8070       %let SYSRC=0;
+8071       %let EMEXCEPTIONSTRING=;
+8072       %let SYSMSG=;
+8073       %em_diagram(action=opensession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, sessionid=6661704711959061, outfile=DiagramOpenSessionResponse.xml);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: CLOSESESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 refers to the same physical library as COUPON.
+NOTE: Libref EMWS1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1
+
+NOTE: There were 66 observations read from the data set EMWS1.EM_DGRAPH.
+NOTE: The data set WORK.EM_DGRAPH has 66 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8085       %let _EM_TREECONVERSION=0;
+8086       data _null_;
+8087       set EMWS1.EM_NODEID end=eof;
+8088       where upcase(Component) ='DECISIONTREE' and CLASS = 'SASHELP.EMMODL.DECISIONTREE.CLASS';
+8089       if eof then call symput('_EM_TREECONVERSION', '1');
+8090       run;
+
+NOTE: There were 0 observations read from the data set EMWS1.EM_NODEID.
+      WHERE (UPCASE(Component)='DECISIONTREE') and (CLASS='SASHELP.EMMODL.DECISIONTREE.CLASS');
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+treeconversion=0 
+8091       %let syscc=0;
+8092       filename _wipchk catalog "EMWS1.Boost.test.source";
+8093       data _null_;
+8094       file _wipchk;
+8095       put '/* Test */';
+8096       run;
+
+NOTE: The file _WIPCHK is:
+      Catalog Name=EMWS1.BOOST.TEST.SOURCE,
+      Catalog Page Size=4096,
+      Number of Catalog Pages=16,
+      Created=Monday,  8 January 2024 16:22:38,
+      Last Modified=Monday,  8 January 2024 19:06:22,
+      Filename=C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\boost.sas7bcat,
+      Release Created=9.0401M7,
+      Host Created=X64_10PRO,
+      Owner Name=DESKTOP-PPAOORK\666,
+      File Size=            65KB,
+      File Size (bytes)=66560
+
+NOTE: 1 record was written to the file _WIPCHK.
+      The minimum record length was 10.
+      The maximum record length was 10.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.03 seconds
+      
+
+8097       data _null_;
+8098       rc = fdelete('_wipchk');
+8099       run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+8100       filename _wipchk;
+NOTE: Fileref _WIPCHK has been deassigned.
+8101       filename _wipxml 'C:\Users\666\AppData\Local\Temp\SAS Temporary Files\_TD3672_DESKTOP-PPAOORK_\Prc2\DiagramOpenSessionResponse.xml' encoding="UTF-8" NOBOM;
+7 The SAS System                                                                                                                                                                                                                   19:06 Monday, January 8, 202
+4
+
+WARNING: End of file.
+WARNING: End of file.
+8102       %let SYSCC=0;
+8103       %let SYSRC=0;
+8104       %let EMEXCEPTIONSTRING=;
+8105       %let SYSMSG=;
+8106       %em_diagram(action=closesession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: OPENSESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 has been deassigned.
+8 The SAS System                                                                                                                                                                                                                   19:06 Monday, January 8, 202
+4
+
+8118       %let SYSCC=0;
+8119       %let SYSRC=0;
+8120       %let EMEXCEPTIONSTRING=;
+8121       %let SYSMSG=;
+8122       %em_diagram(action=opensession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, sessionid=6661704711959061, outfile=DiagramOpenSessionResponse.xml);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: CLOSESESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 refers to the same physical library as COUPON.
+NOTE: Libref EMWS1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1
+
+NOTE: There were 66 observations read from the data set EMWS1.EM_DGRAPH.
+NOTE: The data set WORK.EM_DGRAPH has 66 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8134       %let _EM_TREECONVERSION=0;
+8135       data _null_;
+8136       set EMWS1.EM_NODEID end=eof;
+8137       where upcase(Component) ='DECISIONTREE' and CLASS = 'SASHELP.EMMODL.DECISIONTREE.CLASS';
+8138       if eof then call symput('_EM_TREECONVERSION', '1');
+8139       run;
+
+NOTE: There were 0 observations read from the data set EMWS1.EM_NODEID.
+      WHERE (UPCASE(Component)='DECISIONTREE') and (CLASS='SASHELP.EMMODL.DECISIONTREE.CLASS');
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+treeconversion=0 
+8140       %let syscc=0;
+8141       filename _wipchk catalog "EMWS1.Boost.test.source";
+8142       data _null_;
+8143       file _wipchk;
+8144       put '/* Test */';
+8145       run;
+
+NOTE: The file _WIPCHK is:
+      Catalog Name=EMWS1.BOOST.TEST.SOURCE,
+      Catalog Page Size=4096,
+      Number of Catalog Pages=16,
+      Created=Monday,  8 January 2024 16:22:38,
+      Last Modified=Monday,  8 January 2024 19:06:54,
+      Filename=C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\boost.sas7bcat,
+      Release Created=9.0401M7,
+      Host Created=X64_10PRO,
+      Owner Name=DESKTOP-PPAOORK\666,
+      File Size=            65KB,
+      File Size (bytes)=66560
+
+NOTE: 1 record was written to the file _WIPCHK.
+      The minimum record length was 10.
+      The maximum record length was 10.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8146       data _null_;
+8147       rc = fdelete('_wipchk');
+8148       run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+8149       filename _wipchk;
+NOTE: Fileref _WIPCHK has been deassigned.
+8150       filename _wipxml 'C:\Users\666\AppData\Local\Temp\SAS Temporary Files\_TD3672_DESKTOP-PPAOORK_\Prc2\DiagramOpenSessionResponse.xml' encoding="UTF-8" NOBOM;
+9 The SAS System                                                                                                                                                                                                                   19:06 Monday, January 8, 202
+4
+
+WARNING: End of file.
+WARNING: End of file.
+8151       %let SYSCC=0;
+8152       %let SYSRC=0;
+8153       %let EMEXCEPTIONSTRING=;
+8154       %let SYSMSG=;
+8155       %em_diagram(action=closesession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: OPENSESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 has been deassigned.
+10 The SAS System                                                                                                                                                                                                                  19:06 Monday, January 8, 202
+4
+
+8167       %let SYSCC=0;
+8168       %let SYSRC=0;
+8169       %let EMEXCEPTIONSTRING=;
+8170       %let SYSMSG=;
+8171       %em_diagram(action=opensession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, sessionid=6661704711959061, outfile=DiagramOpenSessionResponse.xml);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: CLOSESESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 refers to the same physical library as COUPON.
+NOTE: Libref EMWS1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1
+
+NOTE: There were 66 observations read from the data set EMWS1.EM_DGRAPH.
+NOTE: The data set WORK.EM_DGRAPH has 66 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8183       %let _EM_TREECONVERSION=0;
+8184       data _null_;
+8185       set EMWS1.EM_NODEID end=eof;
+8186       where upcase(Component) ='DECISIONTREE' and CLASS = 'SASHELP.EMMODL.DECISIONTREE.CLASS';
+8187       if eof then call symput('_EM_TREECONVERSION', '1');
+8188       run;
+
+NOTE: There were 0 observations read from the data set EMWS1.EM_NODEID.
+      WHERE (UPCASE(Component)='DECISIONTREE') and (CLASS='SASHELP.EMMODL.DECISIONTREE.CLASS');
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+treeconversion=0 
+8189       %let syscc=0;
+8190       filename _wipchk catalog "EMWS1.Boost.test.source";
+8191       data _null_;
+8192       file _wipchk;
+8193       put '/* Test */';
+8194       run;
+
+NOTE: The file _WIPCHK is:
+      Catalog Name=EMWS1.BOOST.TEST.SOURCE,
+      Catalog Page Size=4096,
+      Number of Catalog Pages=16,
+      Created=Monday,  8 January 2024 16:22:38,
+      Last Modified=Monday,  8 January 2024 19:07:42,
+      Filename=C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\boost.sas7bcat,
+      Release Created=9.0401M7,
+      Host Created=X64_10PRO,
+      Owner Name=DESKTOP-PPAOORK\666,
+      File Size=            65KB,
+      File Size (bytes)=66560
+
+NOTE: 1 record was written to the file _WIPCHK.
+      The minimum record length was 10.
+      The maximum record length was 10.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8195       data _null_;
+8196       rc = fdelete('_wipchk');
+8197       run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+8198       filename _wipchk;
+NOTE: Fileref _WIPCHK has been deassigned.
+8199       filename _wipxml 'C:\Users\666\AppData\Local\Temp\SAS Temporary Files\_TD3672_DESKTOP-PPAOORK_\Prc2\DiagramOpenSessionResponse.xml' encoding="UTF-8" NOBOM;
+11 The SAS System                                                                                                                                                                                                                  19:06 Monday, January 8, 202
+4
+
+WARNING: End of file.
+WARNING: End of file.
+8200       %let SYSCC=0;
+8201       %let SYSRC=0;
+8202       %let EMEXCEPTIONSTRING=;
+8203       %let SYSMSG=;
+8204       %em_diagram(action=closesession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: OPENSESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 has been deassigned.
+12 The SAS System                                                                                                                                                                                                                  19:06 Monday, January 8, 202
+4
+
+8216       %let SYSCC=0;
+8217       %let SYSRC=0;
+8218       %let EMEXCEPTIONSTRING=;
+8219       %let SYSMSG=;
+8220       %em_diagram(action=opensession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, sessionid=6661704711959061, outfile=DiagramOpenSessionResponse.xml);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: CLOSESESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 refers to the same physical library as COUPON.
+NOTE: Libref EMWS1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1
+
+NOTE: There were 66 observations read from the data set EMWS1.EM_DGRAPH.
+NOTE: The data set WORK.EM_DGRAPH has 66 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8232       %let _EM_TREECONVERSION=0;
+8233       data _null_;
+8234       set EMWS1.EM_NODEID end=eof;
+8235       where upcase(Component) ='DECISIONTREE' and CLASS = 'SASHELP.EMMODL.DECISIONTREE.CLASS';
+8236       if eof then call symput('_EM_TREECONVERSION', '1');
+8237       run;
+
+NOTE: There were 0 observations read from the data set EMWS1.EM_NODEID.
+      WHERE (UPCASE(Component)='DECISIONTREE') and (CLASS='SASHELP.EMMODL.DECISIONTREE.CLASS');
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+treeconversion=0 
+8238       %let syscc=0;
+8239       filename _wipchk catalog "EMWS1.Boost.test.source";
+8240       data _null_;
+8241       file _wipchk;
+8242       put '/* Test */';
+8243       run;
+
+NOTE: The file _WIPCHK is:
+      Catalog Name=EMWS1.BOOST.TEST.SOURCE,
+      Catalog Page Size=4096,
+      Number of Catalog Pages=16,
+      Created=Monday,  8 January 2024 16:22:38,
+      Last Modified=Monday,  8 January 2024 19:08:38,
+      Filename=C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\boost.sas7bcat,
+      Release Created=9.0401M7,
+      Host Created=X64_10PRO,
+      Owner Name=DESKTOP-PPAOORK\666,
+      File Size=            61KB,
+      File Size (bytes)=62464
+
+NOTE: 1 record was written to the file _WIPCHK.
+      The minimum record length was 10.
+      The maximum record length was 10.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8244       data _null_;
+8245       rc = fdelete('_wipchk');
+8246       run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.03 seconds
+      cpu time            0.01 seconds
+      
+
+8247       filename _wipchk;
+NOTE: Fileref _WIPCHK has been deassigned.
+8248       filename _wipxml 'C:\Users\666\AppData\Local\Temp\SAS Temporary Files\_TD3672_DESKTOP-PPAOORK_\Prc2\DiagramOpenSessionResponse.xml' encoding="UTF-8" NOBOM;
+13 The SAS System                                                                                                                                                                                                                  19:06 Monday, January 8, 202
+4
+
+WARNING: End of file.
+WARNING: End of file.
+8249       %let SYSCC=0;
+8250       %let SYSRC=0;
+8251       %let EMEXCEPTIONSTRING=;
+8252       %let SYSMSG=;
+8253       %em_diagram(action=closesession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: OPENSESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 has been deassigned.
+14 The SAS System                                                                                                                                                                                                                  19:06 Monday, January 8, 202
+4
+
+8265       %let SYSCC=0;
+8266       %let SYSRC=0;
+8267       %let EMEXCEPTIONSTRING=;
+8268       %let SYSMSG=;
+8269       %em_diagram(action=opensession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, sessionid=6661704711959061, outfile=DiagramOpenSessionResponse.xml);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: CLOSESESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 refers to the same physical library as COUPON.
+NOTE: Libref EMWS1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1
+
+NOTE: There were 66 observations read from the data set EMWS1.EM_DGRAPH.
+NOTE: The data set WORK.EM_DGRAPH has 66 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+8281       %let _EM_TREECONVERSION=0;
+8282       data _null_;
+8283       set EMWS1.EM_NODEID end=eof;
+8284       where upcase(Component) ='DECISIONTREE' and CLASS = 'SASHELP.EMMODL.DECISIONTREE.CLASS';
+8285       if eof then call symput('_EM_TREECONVERSION', '1');
+8286       run;
+
+NOTE: There were 0 observations read from the data set EMWS1.EM_NODEID.
+      WHERE (UPCASE(Component)='DECISIONTREE') and (CLASS='SASHELP.EMMODL.DECISIONTREE.CLASS');
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+treeconversion=0 
+8287       %let syscc=0;
+8288       filename _wipchk catalog "EMWS1.Boost.test.source";
+8289       data _null_;
+8290       file _wipchk;
+8291       put '/* Test */';
+8292       run;
+
+NOTE: The file _WIPCHK is:
+      Catalog Name=EMWS1.BOOST.TEST.SOURCE,
+      Catalog Page Size=4096,
+      Number of Catalog Pages=16,
+      Created=Monday,  8 January 2024 16:22:38,
+      Last Modified=Monday,  8 January 2024 19:08:41,
+      Filename=C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\boost.sas7bcat,
+      Release Created=9.0401M7,
+      Host Created=X64_10PRO,
+      Owner Name=DESKTOP-PPAOORK\666,
+      File Size=            65KB,
+      File Size (bytes)=66560
+
+NOTE: 1 record was written to the file _WIPCHK.
+      The minimum record length was 10.
+      The maximum record length was 10.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8293       data _null_;
+8294       rc = fdelete('_wipchk');
+8295       run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+8296       filename _wipchk;
+NOTE: Fileref _WIPCHK has been deassigned.
+8297       filename _wipxml 'C:\Users\666\AppData\Local\Temp\SAS Temporary Files\_TD3672_DESKTOP-PPAOORK_\Prc2\DiagramOpenSessionResponse.xml' encoding="UTF-8" NOBOM;
+15 The SAS System                                                                                                                                                                                                                  19:06 Monday, January 8, 202
+4
+
+WARNING: End of file.
+WARNING: End of file.
+8298       %let SYSCC=0;
+8299       %let SYSRC=0;
+8300       %let EMEXCEPTIONSTRING=;
+8301       %let SYSMSG=;
+8302       %em_diagram(action=closesession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: OPENSESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 has been deassigned.
+16 The SAS System                                                                                                                                                                                                                  19:06 Monday, January 8, 202
+4
+
+8314       %let SYSCC=0;
+8315       %let SYSRC=0;
+8316       %let EMEXCEPTIONSTRING=;
+8317       %let SYSMSG=;
+8318       %em_diagram(action=opensession, projpath=%nrstr(C:\Users\666\Desktop), projname=%nrstr(casecaijue), dgmId=EMWS1, sessionid=6661704711959061, outfile=DiagramOpenSessionResponse.xml);
+NOTE: Fileref _DGMFRF has been deassigned.
+WIP_ACTION: CLOSESESSION
+DGMID: EMWS1
+LOCKFILE: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\System\wsopen.lck
+NOTE: Libref EMWS1 refers to the same physical library as COUPON.
+NOTE: Libref EMWS1 was successfully assigned as follows: 
+      Engine:        V9 
+      Physical Name: C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1
+
+NOTE: There were 66 observations read from the data set EMWS1.EM_DGRAPH.
+NOTE: The data set WORK.EM_DGRAPH has 66 observations and 2 variables.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8330       %let _EM_TREECONVERSION=0;
+8331       data _null_;
+8332       set EMWS1.EM_NODEID end=eof;
+8333       where upcase(Component) ='DECISIONTREE' and CLASS = 'SASHELP.EMMODL.DECISIONTREE.CLASS';
+8334       if eof then call symput('_EM_TREECONVERSION', '1');
+8335       run;
+
+NOTE: There were 0 observations read from the data set EMWS1.EM_NODEID.
+      WHERE (UPCASE(Component)='DECISIONTREE') and (CLASS='SASHELP.EMMODL.DECISIONTREE.CLASS');
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+treeconversion=0 
+8336       %let syscc=0;
+8337       filename _wipchk catalog "EMWS1.Boost.test.source";
+8338       data _null_;
+8339       file _wipchk;
+8340       put '/* Test */';
+8341       run;
+
+NOTE: The file _WIPCHK is:
+      Catalog Name=EMWS1.BOOST.TEST.SOURCE,
+      Catalog Page Size=4096,
+      Number of Catalog Pages=16,
+      Created=Monday,  8 January 2024 16:22:38,
+      Last Modified=Monday,  8 January 2024 19:08:57,
+      Filename=C:\Users\666\Desktop\casecaijue\Workspaces\EMWS1\boost.sas7bcat,
+      Release Created=9.0401M7,
+      Host Created=X64_10PRO,
+      Owner Name=DESKTOP-PPAOORK\666,
+      File Size=            65KB,
+      File Size (bytes)=66560
+
+NOTE: 1 record was written to the file _WIPCHK.
+      The minimum record length was 10.
+      The maximum record length was 10.
+NOTE: DATA statement used (Total process time):
+      real time           0.00 seconds
+      cpu time            0.00 seconds
+      
+
+8342       data _null_;
+8343       rc = fdelete('_wipchk');
+8344       run;
+
+NOTE: DATA statement used (Total process time):
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+8345       filename _wipchk;
+NOTE: Fileref _WIPCHK has been deassigned.
+8346       filename _wipxml 'C:\Users\666\AppData\Local\Temp\SAS Temporary Files\_TD3672_DESKTOP-PPAOORK_\Prc2\DiagramOpenSessionResponse.xml' encoding="UTF-8" NOBOM;
+17 The SAS System                                                                                                                                                                                                                  19:06 Monday, January 8, 202
+4
+
+WARNING: End of file.
+WARNING: End of file.
