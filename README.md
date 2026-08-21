@@ -20,8 +20,6 @@ The primary objective is to conduct an in-depth exploratory analysis with a spec
 
 The analyses conducted in this project are anticipated to provide a deeper understanding of the impact of coupons on e-commerce sales. The insights gained could be instrumental in shaping effective e-commerce marketing strategies, especially in the context of enhancing sales through targeted coupon distribution.
 
-Sure, here's the translation in Markdown format:
-
 
 # Learning Reflections and Challenges
 
